@@ -4,7 +4,7 @@ using namespace std;
 int UniqueSum(const vector<int>& nums,int n){
     unordered_map<int,bool> umap;
     int sum=0;
-    for (int i=0; i<n; i++) {
+    for (int i=0; i<n; i++){
         int j= nums[i];
         if (!umap[j]){      //if umap[j]==0 the number at index j has not been encountered before in the array and hence is unique
             sum+=j; 
