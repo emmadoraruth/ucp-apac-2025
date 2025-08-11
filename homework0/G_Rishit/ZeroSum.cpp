@@ -3,15 +3,15 @@ using namespace std;
 
 int ZeroSum(vector<int>& nums, int n){
     unordered_map<int, int> freq;
-    for (int i=0; i<n; i++){
+    for(int i=0; i<n; i++){
         freq[nums[i]]++;
     }
 
     int ans=0;
-    for (auto& x:freq) {
+    for(auto& x:freq){
         int num=x.first;
-        if (num>=0) {
-            if (num==0){
+        if(num>=0){
+            if(num==0){
                 ans+=freq[0]/2;
             } 
             else{
