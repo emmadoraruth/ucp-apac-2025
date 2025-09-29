@@ -1,6 +1,6 @@
 /*
-Time Complexity: O(n)      // Single pass through the array
-Space Complexity: O(1)     // In-place, constant extra space
+Time Complexity: O(n)
+Space Complexity: O(1)
 */
 
 #include <iostream>
