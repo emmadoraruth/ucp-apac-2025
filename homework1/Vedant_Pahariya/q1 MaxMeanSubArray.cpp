@@ -45,13 +45,13 @@ float meanmaxing(vector<int>& arr, int k){
 int main(){
     vector <int> arr = {4, 5, -3, 2, 6, 1};
     // cout << size(arr);
-    cout << meanmaxing(arr, 2);
+    cout << meanmaxing(arr, 2) << "\n";
 
     arr = {4, 5, -3, 2, 6, 1};
-    cout << meanmaxing(arr, 3);
+    cout << meanmaxing(arr, 3) << "\n";
 
     arr = {1, 1, 1, 1, -1, -1, 2, -1, -1};
-    cout << meanmaxing(arr, 3);
+    cout << meanmaxing(arr, 3) << "\n";
 
     arr = {1, 1, 1, 1, -1, -1, 2, -1, -1, 6};
     cout << meanmaxing(arr, 5);
