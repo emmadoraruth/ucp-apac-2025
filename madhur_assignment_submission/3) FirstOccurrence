@@ -1,0 +1,17 @@
+// Question 3: FirstOccurrence 
+// Given a string, return a string that contains only the first occurrence of each character in the string.
+#include<iostream>
+#include<unordered_set>
+using namespace std;
+int main(){
+    string str="Uber Career Prep";
+     unordered_set<char> seen;
+     string s="";
+    for(auto i:str){
+        if(seen.find(i)==seen.end()){
+            seen.insert(i);
+            s=s+i;
+        }
+    }
+    cout<<s;
+}
