@@ -6,14 +6,15 @@ package Satyam_Mishra;
 
 public class q6_MissingInteger {
     private static int missingNumber(int[] arr) {
-        int n = 1;
-
-        for (int ele : arr) {
-            if(ele != n) return n;
-            n++;
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+            if (arr[mid] == mid + 1)
+                low = mid + 1;
+            else
+                high = mid - 1;
         }
-
-        return n;
+        return low + 1;
     }
     public static void main(String[] args) {
         // Test Case 1
@@ -32,3 +33,4 @@ public class q6_MissingInteger {
         System.out.println("Missing integer in arr3 is: " + missingNumber(arr3));
     }
 }
+
