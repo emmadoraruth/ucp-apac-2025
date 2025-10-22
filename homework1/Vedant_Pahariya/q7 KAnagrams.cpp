@@ -1,3 +1,10 @@
+// Problem Statement
+/*Two strings are considered to be “k-anagrams” if they can be made into anagrams by changing at most k characters in one of the strings. Given two strings and an integer k, determine if they are k-anagrams.*/
+
+// Technique: 
+// Time Complexity:
+// Space Complexity: 
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -11,12 +18,15 @@ bool kana(string str1, string str2, int k){
     }
     int diff = 0;
     int diff2 = 0;
+
     for(int c: count){
         if(c > 0) diff += c;
         if(c < 0) diff2 += c;
     }
 
+    // this diff and diff2 are not equal only if strings str1 and str2 are of different length.
     if(diff != -diff2) return false;
+
     return diff <= k;
 }
 
