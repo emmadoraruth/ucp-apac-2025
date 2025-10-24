@@ -1,3 +1,10 @@
+// Problem Statement
+/*Two strings are considered to be “k-anagrams” if they can be made into anagrams by changing at most k characters in one of the strings. Given two strings and an integer k, determine if they are k-anagrams.*/
+
+// Technique: Two Strings increment/decrement hashmap count
+// Time Complexity: O(n) where n = max(str1.length(), str2.length()) — one pass over each string and a constant-size scan.
+// Space Complexity: O(1) (fixed 26-size integer array for the alphabet hashing).
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -9,14 +16,18 @@ bool kana(string str1, string str2, int k){
     for(char c: str2){
         count[c - 'a']--;
     }
+
     int diff = 0;
     int diff2 = 0;
+
     for(int c: count){
         if(c > 0) diff += c;
         if(c < 0) diff2 += c;
     }
 
+    // this diff and diff2 are not equal only if strings str1 and str2 are of different length.
     if(diff != -diff2) return false;
+
     return diff <= k;
 }
 
@@ -36,3 +47,8 @@ int main(){
     k = 3;
     cout << boolalpha << kana(str1, str2, k) << "\n"; // Output: false
 }
+
+
+// Count character frequencies for both strings (fixed-size 26 array for lowercase a–z).
+// The sum of positive differences represents how many characters in str1 must be changed
+// to make the strings anagrams of each other. If lengths differ, they cannot be k-anagrams.
