@@ -1,0 +1,11 @@
+4
+N
+42
+1 2 3 4 5 6 7
+10 20 N 30 N 40 N 50
+
+// Expected outputs:
+// Test Case 1: N
+// Test Case 2: 42
+// Test Case 3: 1 2 4
+// Test Case 4: 10 20 30 40 50

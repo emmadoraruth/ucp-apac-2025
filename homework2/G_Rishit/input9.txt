@@ -1,0 +1,17 @@
+4
+0
+
+1
+42
+
+5
+1 1 2 3 3
+
+8
+1 1 1 1 1 1 1 1
+
+// Expected outputs:
+// Test Case 1: EMPTY          (empty list)
+// Test Case 2: 42             (single node)
+// Test Case 3: 1 2 3          (duplicates removed)
+// Test Case 4: 1              (all elements same -> single value)
