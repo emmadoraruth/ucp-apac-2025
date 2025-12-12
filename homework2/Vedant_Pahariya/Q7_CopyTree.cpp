@@ -1,5 +1,8 @@
 // Given a binary tree, create a deep copy. Return the root of the new tree.
 
+#include <bits/stdc++.h>
+using namespace std;
+
 // Using Pre-order traversal
 Node* copyTree(Node* root) {
     if(root == NULL){
