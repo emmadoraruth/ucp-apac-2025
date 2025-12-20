@@ -175,5 +175,33 @@ void deleteNode(int val) {
         delete successor;
     }
 }
-}
+};
 
+int main(){
+    BinarySearchTree bst;
+    
+    bst.insert(50);
+    bst.insert(30);
+    bst.insert(70);
+    bst.insert(20);
+    bst.insert(40);
+    bst.insert(60);
+    bst.insert(80);
+    
+    cout<<"Min: "<<bst.min()<<endl;
+    cout<<"Max: "<<bst.max()<<endl;
+    
+    cout<<"Contains 40: "<<bst.contains(40)<<endl;
+    cout<<"Contains 100: "<<bst.contains(100)<<endl;
+    
+    bst.deleteNode(20);
+    cout<<"After deleting 20, contains 20: "<<bst.contains(20)<<endl;
+    
+    bst.deleteNode(30);
+    cout<<"After deleting 30, min: "<<bst.min()<<endl;
+    
+    bst.deleteNode(50);
+    cout<<"After deleting 50, contains 50: "<<bst.contains(50)<<endl;
+    
+    return 0;
+}

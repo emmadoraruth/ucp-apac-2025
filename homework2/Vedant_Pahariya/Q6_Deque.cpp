@@ -113,3 +113,34 @@ private:
         return head == NULL;
         }
 };
+int main(){
+    Deque dq;
+    
+    cout<<"Is empty: "<<dq.isEmpty()<<endl;
+    
+    dq.pushBack(10);
+    dq.pushBack(20);
+    dq.pushFront(5);
+    dq.pushFront(2);
+    
+    cout<<"Front: "<<dq.front()<<endl;
+    cout<<"Back: "<<dq.back()<<endl;
+    
+    cout<<"Pop front: "<<dq.popFront()<<endl;
+    cout<<"Pop back: "<<dq.popBack()<<endl;
+    
+    cout<<"Front after pops: "<<dq.front()<<endl;
+    cout<<"Back after pops: "<<dq.back()<<endl;
+    
+    dq.pushBack(30);
+    dq.pushFront(1);
+    
+    while(!dq.isEmpty()){
+        cout<<dq.popFront()<<" ";
+    }
+    cout<<endl;
+    
+    cout<<"Is empty now: "<<dq.isEmpty()<<endl;
+    
+    return 0;
+}

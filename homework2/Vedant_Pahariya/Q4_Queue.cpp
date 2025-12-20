@@ -63,3 +63,32 @@ private:
         return head == NULL;
      }
 };
+
+int main(){
+    Queue q;
+    
+    cout<<"Is empty: "<<q.isEmpty()<<endl;
+    
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    
+    cout<<"Peek: "<<q.peek()<<endl;
+    
+    cout<<"Dequeue: "<<q.dequeue()<<endl;
+    cout<<"Dequeue: "<<q.dequeue()<<endl;
+    
+    cout<<"Peek after 2 dequeues: "<<q.peek()<<endl;
+    
+    q.enqueue(40);
+    q.enqueue(50);
+    
+    while(!q.isEmpty()){
+        cout<<q.dequeue()<<" ";
+    }
+    cout<<endl;
+    
+    cout<<"Is empty now: "<<q.isEmpty()<<endl;
+    
+    return 0;
+}

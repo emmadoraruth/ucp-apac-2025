@@ -50,3 +50,31 @@ public:
         return head == NULL;
     }
 };
+int main(){
+    Stack s;
+    
+    cout<<"Is empty: "<<s.isEmpty()<<endl;
+    
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    
+    cout<<"Top: "<<s.top()<<endl;
+    
+    cout<<"Pop: "<<s.pop()<<endl;
+    cout<<"Pop: "<<s.pop()<<endl;
+    
+    cout<<"Top after 2 pops: "<<s.top()<<endl;
+    
+    s.push(40);
+    s.push(50);
+    
+    while(!s.isEmpty()){
+        cout<<s.pop()<<" ";
+    }
+    cout<<endl;
+    
+    cout<<"Is empty now: "<<s.isEmpty()<<endl;
+    
+    return 0;
+}
