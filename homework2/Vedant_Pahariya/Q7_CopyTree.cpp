@@ -1,5 +1,9 @@
 // Given a binary tree, create a deep copy. Return the root of the new tree.
 
+// Technique used: Pre-order and Post-order traversal (recursion)
+// Time Complexity: O(n) where n is the number of nodes in the tree because we visit each node exactly once to copy it.
+// Space Complexity: O(h) due to recursion stack, where h is the height of the tree
+
 #include <bits/stdc++.h>
 using namespace std;
 

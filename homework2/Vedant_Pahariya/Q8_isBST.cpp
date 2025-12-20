@@ -1,3 +1,10 @@
+// Given a binary tree, determine if it is a binary search tree.
+
+// Technique used: Validate BST by ensuring every node's value lies within valid min and max range 
+// Used Preoder traversal, first checking the current node, then left and right subtrees
+// Time Complexity: O(n) where n is the number of nodes in the tree
+// Space Complexity: O(h) due to recursion stack, where h is the height of the tree
+
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -172,7 +172,6 @@ void printList(Node* head){
     cout << endl;
 }
 
-// write a main function for testing your implementation.
 int main() {
     Node* head = NULL;
     Node* tail = NULL;

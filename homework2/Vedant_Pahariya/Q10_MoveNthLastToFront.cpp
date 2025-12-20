@@ -51,7 +51,7 @@ void printList(Node* head){
     cout << "\n";
 }
 
-// write main function to test the implementation
+
 int main(){
     Node* head = new Node();
     head->data = 10;

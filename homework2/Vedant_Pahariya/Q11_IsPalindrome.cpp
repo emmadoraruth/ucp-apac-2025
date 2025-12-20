@@ -1,3 +1,9 @@
+// Given a doubly linked list, determine if it is a palindrome.
+
+// Technique used: Two-pointer technique (iterative) and Recursion
+// Time Complexity: O(n) where n is the number of nodes in the list, it is actually O(n/2) but we drop the constant factor
+// Space Complexity: O(1) for iterative approach, O(n) for recursive approach due to recursion stack
+
 #include <bits/stdc++.h>
 using namespace std;
 
