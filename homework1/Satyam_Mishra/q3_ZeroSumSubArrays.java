@@ -5,6 +5,8 @@
 
 package Satyam_Mishra;
 
+import java.util.HashMap;
+
 public class q3_ZeroSumSubArrays {
     private static int numOfSubarrays(int[] arr) {
         HashMap<Integer, Integer> map = new HashMap<>();
