@@ -1,0 +1,21 @@
+4
+0
+-1
+
+1
+1
+0
+
+5
+1 2 3 4 5
+2
+
+5
+10 20 30 40 50
+-1
+
+// Expected outputs:
+// Test Case 1: EMPTY | NO_CYCLE          (empty list)
+// Test Case 2: 1     | CYCLE_REMOVED     (single node pointing to itself -> broken)
+// Test Case 3: 1 2 3 4 5 | CYCLE_REMOVED  (cycle starting at value 3 removed)
+// Test Case 4: 10 20 30 40 50 | NO_CYCLE   (no cycle)

@@ -1,0 +1,21 @@
+4
+0
+1
+
+1
+42
+1
+
+5
+1 2 3 4 5
+2
+
+5
+10 20 30 40 50
+6
+
+// Expected outputs:
+// Test Case 1: EMPTY         (empty list)
+// Test Case 2: 42            (single node, n=1 -> front)
+// Test Case 3: 4 1 2 3 5     (2nd from last is 4 -> moved to front)
+// Test Case 4: 10 20 30 40 50 (n > length -> no change)

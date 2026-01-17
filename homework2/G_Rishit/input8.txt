@@ -1,0 +1,11 @@
+4
+N
+42
+5 3 7 2 4 6 8
+10 5 15 N N 6 20
+
+// Expected outputs:
+// Test Case 1: YES      (empty tree is a BST)
+// Test Case 2: YES      (single node)
+// Test Case 3: YES      (perfect BST -> inorder: 2 3 4 5 6 7 8)
+// Test Case 4: NO       (node 6 is in right subtree of 10 but < 10 -> violates BST)

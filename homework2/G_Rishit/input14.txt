@@ -1,0 +1,18 @@
+4
+10
+N
+
+42
+42
+
+65
+50 30 70 20 40 60 80
+
+4
+10 5 15
+
+// Expected outputs:
+// Test Case 1: NONE
+// Test Case 2: 42
+// Test Case 3: 60
+// Test Case 4: NONE
