@@ -1,0 +1,11 @@
+4
+N
+42
+-5 3 9 N 4 N 100000
+1 2 3 4 5 6 7 N N 8 N N N 9 10
+
+// Expected outputs:
+// Test Case 1: N
+// Test Case 2: 42
+// Test Case 3: 3 4 -5 9 100000
+// Test Case 4: 4 2 8 5 1 6 3 9 7 10

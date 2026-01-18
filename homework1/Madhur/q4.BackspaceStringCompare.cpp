@@ -1,51 +1,41 @@
 /*
 Time Complexity: O(n + m)
-Space Complexity: O(1)
+Space Complexity: O(n+m)
 */
 
 #include <iostream>
+#include <stack>
 #include <string>
 using namespace std;
 
-// Helper function to process backspaces and return final index
-int getNextValidIndex(const string &s, int index) {
-    int backspace = 0;
-    while (index >= 0) {
-        if (s[index] == '#') {
-            backspace++;
-            index--;
-        } else if (backspace > 0) {
-            backspace--;
-            index--;
-        } else {
-            break;
-        }
-    }
-    return index;
-}
-
-// Function to compare two strings with backspaces
 bool backspaceCompare(string s, string t) {
-    int i = s.size() - 1, j = t.size() - 1;
+    stack<char> chs;
+    stack<char> cht;
 
-    while (i >= 0 || j >= 0) {
-        i = getNextValidIndex(s, i);
-        j = getNextValidIndex(t, j);
-
-        if (i >= 0 && j >= 0 && s[i] != t[j]) return false;
-        if ((i >= 0) != (j >= 0)) return false;
-
-        i--;
-        j--;
+    for(int i = 0; i < s.size(); i++) {
+        if(s[i] != '#')
+            chs.push(s[i]);
+        else if(!chs.empty())
+            chs.pop();
     }
-    return true;
+
+    for(int i = 0; i < t.size(); i++) {
+        if(t[i] != '#')
+            cht.push(t[i]);
+        else if(!cht.empty())
+            cht.pop();
+    }
+
+    return chs == cht;
 }
 
-// Test cases
 int main() {
-    cout << (backspaceCompare("abcde", "abcde") ? "True" : "False") << endl;            // Expected: True
-    cout << (backspaceCompare("Uber Career Prep", "u#Uber Careee#r Prep") ? "True" : "False") << endl; // Expected: True
-    cout << (backspaceCompare("abcdef###xyz", "abcw#xyz") ? "True" : "False") << endl;  // Expected: True
-    cout << (backspaceCompare("abcdef###xyz", "abcdefxyz###") ? "True" : "False") << endl; // Expected: False
+    cout << boolalpha;
+
+    cout << backspaceCompare("abcde", "abcde") << endl;                 // true
+    cout << backspaceCompare("Uber Career Prep", "u#Uber Careee#r Prep") << endl; // true
+    cout << backspaceCompare("abcdef###xyz", "abcw#xyz") << endl;       // true
+    cout << backspaceCompare("abcdef###xyz", "abcdefxyz###") << endl;   // false
+
     return 0;
 }

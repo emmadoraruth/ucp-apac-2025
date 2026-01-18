@@ -41,5 +41,26 @@ return answer;
 }
 
 int main(){
+vector<int> arr1 = {1, -1, 2, -2, 3};
+    cout << ZeroSumSubArrays(arr1) << endl; 
 
+    vector<int> arr2 = {0, 0, 0};
+    cout << ZeroSumSubArrays(arr2) << endl; 
+
+    vector<int> arr3 = {3, 4, -7, 3, 1, 3, -4, -2, -2};
+    cout << ZeroSumSubArrays(arr3) << endl; 
+
+    vector<int> arr4 = {};
+    cout << ZeroSumSubArrays(arr4) << endl; 
+
+    vector<int> arr5 = {4, 5, 2, -1, -3, -3, 4, 6, -7};
+    cout << ZeroSumSubArrays(arr5) << endl; 
+
+    vector<int> arr6 = {1, 8, 7, 3, 11, 9};
+    cout << ZeroSumSubArrays(arr6) << endl; 
+
+    vector<int> arr7 = {8, -5, 0, -2, 3, -4};
+    cout << ZeroSumSubArrays(arr7) << endl; 
+
+    return 0;
 }

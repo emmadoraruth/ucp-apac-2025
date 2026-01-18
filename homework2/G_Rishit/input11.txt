@@ -1,0 +1,17 @@
+4
+0
+
+1
+7
+
+6
+1 2 3 3 2 1
+
+5
+1 2 3 4 5
+
+// Expected outputs:
+// Test Case 1: YES    (empty list -> palindrome)
+// Test Case 2: YES    (single node -> palindrome)
+// Test Case 3: YES    (even-length palindrome)
+// Test Case 4: NO     (not a palindrome)

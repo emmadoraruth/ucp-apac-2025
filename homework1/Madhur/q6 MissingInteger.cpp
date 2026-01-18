@@ -7,9 +7,9 @@ Space Complexity: O(1)     // Only a few variables used
 #include <vector>
 using namespace std;
 
-// Function to find the missing integer in 1..n
+// Function to find the missing integer in 1 to n
 int missingInteger(const vector<int>& arr, int n) {
-    int expectedSum = n * (n + 1) / 2; // Sum of 1..n
+    int expectedSum = n * (n + 1) / 2; // Sum of 1 to n(AP)
     int actualSum = 0;
     for (int num : arr) actualSum += num;
     return expectedSum - actualSum;
