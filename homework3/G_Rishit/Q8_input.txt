@@ -1,0 +1,11 @@
+9
+A B blue
+A C red
+B D blue
+B E blue
+C B red
+D C blue
+A D red
+D E red
+E C red
+A E

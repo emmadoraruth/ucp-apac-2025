@@ -1,0 +1,9 @@
+8
+INSERT task1 3
+INSERT task2 5
+INSERT task3 1
+TOP
+REMOVE
+TOP
+INSERT task4 10
+TOP

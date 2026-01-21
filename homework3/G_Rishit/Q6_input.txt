@@ -1,0 +1,10 @@
+11
+Skagway Juneau Gustavus Homer Port_Alsworth Glacier_Bay Fairbanks McCarthy Copper_Center Healy Anchorage
+7
+Anchorage Homer
+Glacier_Bay Gustavus
+Copper_Center McCarthy
+Anchorage Copper_Center
+Copper_Center Fairbanks
+Healy Fairbanks
+Healy Anchorage

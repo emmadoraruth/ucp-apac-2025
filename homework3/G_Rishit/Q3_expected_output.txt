@@ -1,0 +1,8 @@
+Inserted task1 with priority 3
+Inserted task2 with priority 5
+Inserted task3 with priority 1
+Top element: task2
+Removed top element
+Top element: task1
+Inserted task4 with priority 10
+Top element: task4

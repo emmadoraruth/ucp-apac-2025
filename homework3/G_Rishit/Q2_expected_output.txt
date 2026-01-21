@@ -1,0 +1,7 @@
+Inserted 10
+Inserted 5
+Inserted 20
+Top element: 5
+Inserted 3
+Removed top element
+Top element: 3

@@ -1,0 +1,8 @@
+6
+Boston New_York 4
+New_York Philadelphia 2
+Boston Newport 1.5
+Washington Philadelphia 2.5
+Boston Portland 2.5
+Philadelphia Washington 2.5
+New_York 5
