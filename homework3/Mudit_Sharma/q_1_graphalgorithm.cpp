@@ -22,6 +22,8 @@ public:
         }
     }
 
+    //time complexity  :O(nXm)
+    //space complexity :O(1)
     void printAdj()
     {
         for (int i = 0; i < size; i++){
@@ -49,6 +51,8 @@ public:
         return false;
     }
 
+    //time complexity  :O(nXm)
+    //space complexity :O(1)
     bool dfssearch(int val){
         vector<bool> visited(size, false);
         for (int i = 0; i < size; i++){
@@ -60,6 +64,8 @@ public:
         return false;
     }
 
+    //time complexity  :o(nXm)
+    //space complexity :O(1)
     bool bfssearch(int val){
         vector<bool> visited(size, false);
 
@@ -100,7 +106,10 @@ public:
         }
     }
     s.push(node);
-}
+    }
+
+    //time complexity  :O(nXm)
+    //space complexity :O(n)
     vector<int> topologicalSortdfs(){
         vector<int> topo;
         stack<int> s;
@@ -118,6 +127,8 @@ public:
         return topo;
     }
 
+    //time complexity  :O(n*m)
+    //space complexity :O(n) in making the indegree
     vector<int> KhansAlgo_topologicalSortbfs(){
         vector<int> indegree(size, 0);
 
