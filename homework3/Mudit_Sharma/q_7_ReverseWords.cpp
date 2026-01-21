@@ -15,6 +15,8 @@
 //another approach:start from 0th index and start making the string word and pushing into the stack and 
 //when iteration ends i can insert into a new string by popping word from the stack
 
+//time complexity  :O(n) 
+//space complexity :O(n) by using a stack and answer string 
 
 #include<bits/stdc++.h>
 using namespace std;

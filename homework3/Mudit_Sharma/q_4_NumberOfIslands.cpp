@@ -19,7 +19,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//5:50-6:18
+//5:50-6:08
+     //TIME TAKEN:20 min
+    //time complexity :O(n)
+    //space complexity :O(nXm)
 
 bool issafe(int row,int col,vector<vector<bool>>& visited,vector<vector<int>>& islands){
     int rows=islands.size();

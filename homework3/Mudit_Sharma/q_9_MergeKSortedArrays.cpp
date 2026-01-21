@@ -7,6 +7,14 @@
 // Input: 3, [[1, 4, 7, 9], [2, 6, 7, 10, 11, 13, 15], [3, 8, 12, 13, 16]]
 // Output: [1, 2, 3, 4, 6, 7, 7, 8, 9, 10, 11, 12, 13, 13, 15, 16]
 
+//-------------------------------------------------------------------------------------------------------
+//I used Min heap where i pushed first integer of each array so 
+//and then whenever i pop one smallest element from min heap
+//then i will push the next element from that array into the heap if more elements are left
+
+//Time complexity : O(nXm)
+//Space complexity: O(nXm) in min heap and also in the answer array
+
 #include <bits/stdc++.h>
 using namespace std;
 

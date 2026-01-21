@@ -26,6 +26,9 @@
 //here,i am using bfs
 //conceptually similar to that of No. of islands
 
+
+//time complexity:O(n+m)
+//space complexity:O(n^2)
 #include<bits/stdc++.h>
 using namespace std;
 void bfs(string curr,unordered_map<string,vector<string>>& adj,unordered_map<string,bool>& visited){

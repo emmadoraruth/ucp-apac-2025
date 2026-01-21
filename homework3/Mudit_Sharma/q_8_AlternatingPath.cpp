@@ -11,6 +11,10 @@
 // Input: origin = E, destination = D 
 // Output: -1 (only path is: E→C (red), C→B (red), B→D (blue))
 
+//Used the concept of Disjoint set
+
+//time complexity  :O(n*m)
+//space complexity :O(n) in queue
 
 #include <bits/stdc++.h>
 using namespace std;

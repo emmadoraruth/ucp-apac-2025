@@ -7,6 +7,11 @@
 //-------------------------------------------------------------------------------------------------------
 #include <bits/stdc++.h>
 using namespace std;
+
+//using binary tree
+
+//time complexity  :O(n)
+//space complexity :O(n)  in storing the binary numbers
 vector<string> firstKBinaryNumbers(int k) {
     vector<string> result;
     if (k <= 0) return result;
