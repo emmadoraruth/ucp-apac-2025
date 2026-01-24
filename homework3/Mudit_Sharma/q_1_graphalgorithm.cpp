@@ -1,14 +1,13 @@
 #include <bits/stdc++.h>
-using namespace std;
 
 class graph
 {
 public:
-    unordered_map<int, vector<int>> adj;
+    std::unordered_map<int, std::vector<int>> adj;
     int size;
  
     //constructor of graph
-    graph(vector<pair<int,int>> edges, int n) {
+    graph(std::vector<std::pair<int,int>> edges, int n) {
         size = n;
         // initialize all nodes
         for (int i = 0; i < n; i++) {
@@ -27,15 +26,15 @@ public:
     void printAdj()
     {
         for (int i = 0; i < size; i++){
-            cout << i << "  ";
+            std::cout << i << "  ";
             for (auto j : adj[i]){
-                cout << j << " ";
+                std::cout << j << " ";
             }
-            cout << endl;
+            std::cout << std::endl;
         }
     }
 
-    bool dfsHelperFunction(int node, int val, vector<bool> &visited)
+    bool dfsHelperFunction(int node, int val, std::vector<bool> &visited)
     {
         if (node == val)
             return true;
@@ -54,8 +53,8 @@ public:
     //time complexity  :O(n+m)
     //space complexity :O(1)
     bool dfssearch(int val){
-        vector<bool> visited(size, false);
-        for (int i = 0; i < size; i++){
+        std::vector<bool> visited(size, false);
+        for (int i = 0; i < size; i++){ 
             if (!visited[i]){
                 if (dfsHelperFunction(i, val, visited))
                     return true;
@@ -64,15 +63,15 @@ public:
         return false;
     }
 
-    //time complexity  :o(n+m)
+    //time complexity  :O(n+m)
     //space complexity :O(1)
     bool bfssearch(int val){
-        vector<bool> visited(size, false);
+        std::vector<bool> visited(size, false);
 
         for (int start = 0; start < size; start++){
             if (visited[start])
                 continue;
-            queue<int> q;
+            std::queue<int> q;
             q.push(start);
             visited[start] = true;
 
@@ -94,7 +93,7 @@ public:
         return false;
     }
 
-   void topologicalSortDfsHelper(int node, stack<int>& s, vector<bool>& visited){
+   void topologicalSortDfsHelper(int node, std::stack<int>& s, std::vector<bool>& visited){
     if (visited[node])
         return;
 
@@ -110,10 +109,10 @@ public:
 
     //time complexity  :O(n+m)
     //space complexity :O(n)
-    vector<int> topologicalSortdfs(){
-        vector<int> topo;
-        stack<int> s;
-        vector<bool> visited(size, false);
+    std::vector<int> topologicalSortdfs(){
+        std::vector<int> topo;
+        std::stack<int> s;
+        std::vector<bool> visited(size, false);
 
         for (int i = 0; i < size; i++){
             if (!visited[i])
@@ -129,8 +128,8 @@ public:
 
     //time complexity  :O(n+m)
     //space complexity :O(n) in making the indegree
-    vector<int> KhansAlgo_topologicalSortbfs(){
-        vector<int> indegree(size, 0);
+    std::vector<int> KhansAlgo_topologicalSortbfs(){
+        std::vector<int> indegree(size, 0);
 
         for (int i = 0; i < size; i++)
         {
@@ -140,13 +139,13 @@ public:
             }
         }
 
-        queue<int> q;
+        std::queue<int> q;
         for (int i = 0; i < size; i++){
             if (indegree[i] == 0)
                 q.push(i);
         }
 
-        vector<int> ans;
+        std::vector<int> ans;
         while (!q.empty()){
             int front = q.front();
             q.pop();
@@ -164,33 +163,33 @@ public:
 };
 
 int main(){
-    vector<pair<int, int>> edges = {{1, 2}, {2, 3}, {1, 3}, {3, 2}, {2, 0}};
+    std::vector<std::pair<int, int>> edges = {{1, 2}, {2, 3}, {1, 3}, {3, 2}, {2, 0}};
     graph g(edges, 4);
 
     g.printAdj();
 
-    cout << "Enter the value to find : ";
+    std::cout << "Enter the value to find : ";
     int valtofind;
-    cin >> valtofind;
+    std::cin >> valtofind;
 
-    cout << "Search Using DFS Algo : "
-         << (g.dfssearch(valtofind) ? "Present" : "Absent") << endl;
+    std::cout << "Search Using DFS Algo : "
+         << (g.dfssearch(valtofind) ? "Present" : "Absent") << std::endl;
 
-    cout << "Search using BFS Algo : "
-         << (g.bfssearch(valtofind) ? "Present" : "Absent") << endl;
+    std::cout << "Search using BFS Algo : "
+         << (g.bfssearch(valtofind) ? "Present" : "Absent") << std::endl;
 
-    vector<pair<int, int>> edges2 = {{0,1}, {0,2}, {1,3}, {2,3}};
+    std::vector<std::pair<int, int>> edges2 = {{0,1}, {0,2}, {1,3}, {2,3}};
     graph g2(edges2, 4);
 
-    vector<int> topoByDfs = g2.topologicalSortdfs();
-    cout << "Topological Sort by DFS : ";
+    std::vector<int> topoByDfs = g2.topologicalSortdfs();
+    std::cout << "Topological Sort by DFS : ";
     for (auto& i : topoByDfs)
-        cout << i << " , ";
-    cout << endl;
+        std::cout << i << " , ";
+    std::cout << std::endl;
 
-    vector<int> topoByBfs = g2.KhansAlgo_topologicalSortbfs();
-    cout << "Topological Sort by BFS : ";
+    std::vector<int> topoByBfs = g2.KhansAlgo_topologicalSortbfs();
+    std::cout << "Topological Sort by BFS : ";
     for (auto& i : topoByBfs)
-        cout << i << " , ";
-    cout << endl;
+        std::cout << i << " , ";
+    std::cout << std::endl;
 }

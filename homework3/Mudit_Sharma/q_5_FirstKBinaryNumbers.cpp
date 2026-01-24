@@ -6,21 +6,19 @@
 //each we insert 0 and 1 to get next two numbers
 //-------------------------------------------------------------------------------------------------------
 #include <bits/stdc++.h>
-using namespace std;
-
 //using binary tree
 
 //time complexity  :O(n)
 //space complexity :O(n)  in storing the binary numbers
-vector<string> firstKBinaryNumbers(int k) {
-    vector<string> result;
+std::vector<std::string> firstKBinaryNumbers(int k) {
+    std::vector<std::string> result;
     if (k <= 0) return result;
 
-    queue<string> q;
+    std::queue<std::string> q;
     q.push("1");
 
     for (int i = 0; i < k; i++) {
-        string curr = q.front();
+        std::string curr = q.front();
         q.pop();
 
         result.push_back(curr);
@@ -34,14 +32,14 @@ vector<string> firstKBinaryNumbers(int k) {
 int main(){
     int k1=4;
     int k2=7;
-    vector<string> binnos1=firstKBinaryNumbers(k1);
-    vector<string> binnos2=firstKBinaryNumbers(k2);
+    std::vector<std::string> binnos1=firstKBinaryNumbers(k1);
+    std::vector<std::string> binnos2=firstKBinaryNumbers(k2);
     for(auto& i:binnos1){
-        cout<<i<<" , ";
+        std::cout<<i<<" , ";
     }
-    cout<<endl;
+    std::cout<<std::endl;
     for(auto& i:binnos2){
-        cout<<i<<" , ";
+        std::cout<<i<<" , ";
     }
-    cout<<endl;
+    std::cout<<std::endl;
 }

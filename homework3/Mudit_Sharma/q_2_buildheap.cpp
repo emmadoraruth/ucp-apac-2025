@@ -18,18 +18,16 @@
 
 
 #include <bits/stdc++.h>
-using namespace std;
-
 class MinHeap {
 private:
-    vector<int> arr;
+    std::vector<int> arr;
 
     // Heapify up (used after insertion)
     void heapifyUp(int index) {
         while (index > 0) {
             int parent = (index - 1) / 2;
             if (arr[parent] > arr[index]) {
-                swap(arr[parent], arr[index]);
+                std::swap(arr[parent], arr[index]);
                 index = parent;
             } else {
                 break;
@@ -53,7 +51,7 @@ private:
                 smallest = right;
 
             if (smallest != index) {
-                swap(arr[index], arr[smallest]);
+                std::swap(arr[index], arr[smallest]);
                 index = smallest;
             } else {
                 break;
@@ -65,9 +63,9 @@ public:
     // Returns the minimum element
     int top() {
         if (arr.empty()){
-            cout<<"Heap is empty";
+            std::cout<<"Heap is empty";
             return -1;
-            cout<<endl;
+            std::cout<<std::endl;
         }
         return arr[0];
     }
@@ -81,7 +79,7 @@ public:
     // Remove the minimum element
     void remove() {
         if (arr.empty()){
-            cout<<"Heap is empty";
+            std::cout<<"Heap is empty";
             return;
         }
         arr[0] = arr.back();
@@ -94,8 +92,8 @@ public:
     // Optional: for debugging
     void printHeap() {
         for (int x : arr)
-            cout << x << " ";
-        cout << endl;
+            std::cout << x << " ";
+        std::cout << std::endl;
     }
 };
 
@@ -109,29 +107,28 @@ int main() {
     h.insert(1);
     h.insert(20);
 
-    cout << "Heap elements: ";
+    std::cout << "Heap elements: ";
     h.printHeap();
 
     // Get minimum element
-    cout << "Top (min element): " << h.top() << endl;
+    std::cout << "Top (min element): " << h.top() << std::endl;
 
     // Remove minimum element
     h.remove();
-    cout << "After removing top: ";
+    std::cout << "After removing top: ";
     h.printHeap();
 
     // Remove again
     h.remove();
-    cout << "After removing again: ";
+    std::cout << "After removing again: ";
     h.printHeap();
 
     // Insert more elements
     h.insert(2);
     h.insert(8);
-    cout << "After inserting 2 and 8: ";
+    std::cout << "After inserting 2 and 8: ";
     h.printHeap();
 
-    cout << "Top (min element): " << h.top() << endl;
-
+    std::cout << "Top (min element): " << h.top() << std::endl;
     return 0;
 }

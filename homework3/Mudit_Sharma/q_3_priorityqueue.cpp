@@ -1,9 +1,8 @@
 #include <bits/stdc++.h>
-using namespace std;
 
 class PriorityQueue {
 private:
-    vector<pair<string,int>> arr;
+    std::vector<std::pair<std::string,int>> arr;
 
     // Heapify up (after insertion)
     void heapifyUp(int index) {
@@ -12,7 +11,7 @@ private:
 
             // MAX heap: compare priorities
             if (arr[parent].second < arr[index].second) {
-                swap(arr[parent], arr[index]);
+                std::swap(arr[parent], arr[index]);
                 index = parent;
             } else {
                 break;
@@ -36,7 +35,7 @@ private:
                 largest = right;
 
             if (largest != index) {
-                swap(arr[index], arr[largest]);
+                std::swap(arr[index], arr[largest]);
                 index = largest;
             } else {
                 break;
@@ -46,16 +45,16 @@ private:
 
 public:
     // Returns highest priority element
-    string top() {
+    std::string top() {
         if (arr.empty()) {
-            cout << "Priority Queue is empty\n";
+            std::cout << "Priority Queue is empty\n";
             return "";
         }
         return arr[0].first;
     }
 
     // Insert element with priority
-    void insert(string x, int weight) {
+    void insert(std::string x, int weight) {
         arr.push_back({x, weight});
         heapifyUp(arr.size() - 1);
     }
@@ -63,7 +62,7 @@ public:
     // Remove highest priority element
     void remove() {
         if (arr.empty()) {
-            cout << "Priority Queue is empty\n";
+            std::cout << "Priority Queue is empty\n";
             return;
         }
 
@@ -77,8 +76,8 @@ public:
     // Debug helper
     void printPQ() {
         for (auto &p : arr)
-            cout << "(" << p.first << ", " << p.second << ") ";
-        cout << endl;
+            std::cout << "(" << p.first << ", " << p.second << ") ";
+        std::cout << std::endl;
     }
 };
 
@@ -92,11 +91,11 @@ int main() {
 
     pq.printPQ();
 
-    cout << "Top: " << pq.top() << endl;
+    std::cout << "Top: " << pq.top() << std::endl;
 
     pq.remove();
-    cout << "After remove:\n";
+    std::cout << "After remove:\n";
     pq.printPQ();
 
-    cout << "Top: " << pq.top() << endl;
+    std::cout << "Top: " << pq.top() << std::endl;
 }
