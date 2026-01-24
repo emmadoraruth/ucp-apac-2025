@@ -24,17 +24,16 @@
 // ["Intro to Writing", "Contemporary Literature",  "Ancient Literature", "Comparative Literature", "Plays & Screenplays"] 
 
 #include<bits/stdc++.h>
-using namespace std;
-vector<string> findOrder(vector<string>& subjects,vector<pair<string,string>>& edges){
-    unordered_map<string,vector<string>> adj;
-    unordered_map<string, int> indegree;
+std::vector<std::string> findOrder(std::vector<std::string>& subjects,std::vector<std::pair<std::string,std::string>>& edges){
+    std::unordered_map<std::string,std::vector<std::string>> adj;
+    std::unordered_map<std::string, int> indegree;
     for(auto& sub:subjects){
         adj[sub]={};
         indegree[sub]=0;
     }
     for(auto& edge:edges){
-        string course = edge.first;
-        string prereq = edge.second;
+        std::string course = edge.first;
+        std::string prereq = edge.second;
 
         adj[prereq].push_back(course);
         indegree[course]++;
@@ -46,15 +45,15 @@ vector<string> findOrder(vector<string>& subjects,vector<pair<string,string>>& e
     //one->dfs
     //another one->bfs by khan's algorithm
     //here i am doing khan's algo
-    queue<string> q;
+    std::queue<std::string> q;
     for(auto& i:indegree){
            if(i.second==0){
             q.push(i.first);
            }
     }
-    vector<string> ans;
+    std::vector<std::string> ans;
     while(!q.empty()){
-        string front=q.front();
+        std::string front=q.front();
         ans.push_back(front);
         q.pop();
         for(auto& neigh:adj[front]){
@@ -66,11 +65,11 @@ vector<string> findOrder(vector<string>& subjects,vector<pair<string,string>>& e
     
 }
 int main(){
-    vector<string> subjects={"Intro to Programming", "Data Structures", "Advanced Algorithms", "Operating Systems", "Databases"};
-    vector<pair<string,string>> edges={ {"Data Structures","Intro to Programming"}, {"Advanced Algorithms","Data Structures"}, {"Operating Systems","Advanced Algorithms"}, {"Databases","Advanced Algorithms"}};
-    vector<string> orderOfCourse=findOrder(subjects,edges);
+    std::vector<std::string> subjects={"Intro to Programming", "Data Structures", "Advanced Algorithms", "Operating Systems", "Databases"};
+    std::vector<std::pair<std::string,std::string>> edges={ {"Data Structures","Intro to Programming"}, {"Advanced Algorithms","Data Structures"}, {"Operating Systems","Advanced Algorithms"}, {"Databases","Advanced Algorithms"}};
+    std::vector<std::string> orderOfCourse=findOrder(subjects,edges);
     for(auto& i:orderOfCourse){
-        cout<<i<<" , ";
+        std::cout<<i<<" , ";
     }
-    cout<<endl;
+    std::cout<<std::endl;
 }
