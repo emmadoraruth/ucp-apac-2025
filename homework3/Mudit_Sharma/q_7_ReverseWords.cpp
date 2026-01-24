@@ -19,10 +19,9 @@
 //space complexity :O(n) by using a stack and answer string 
 
 #include<bits/stdc++.h>
-using namespace std;
-string reverseWords(string str){
-    string word="";
-    stack<string> st;
+std::string reverseWords(std::string str){
+    std::string word="";
+    std::stack<std::string> st;
     for(auto& ch:str){
         if(ch==' '){                // some word end then we also need to push a space and after
                                     //last word is pushed no need of space.
@@ -35,7 +34,7 @@ string reverseWords(string str){
         }
     }
     st.push(word);
-    string ans="";
+    std::string ans="";
     while(!st.empty()){
         ans+=st.top();
         st.pop();
@@ -43,10 +42,10 @@ string reverseWords(string str){
     return ans;
 }
 int main(){
-    string s1="Uber Career Prep";
-    string reversewords1=reverseWords(s1);
-    cout<<"After Reversing the words string becomes : "<<reversewords1<<endl;
-    string s2="Emma lives in Brooklyn, New York.";
-    string reversewords2=reverseWords(s2);
-    cout<<"After Reversing the words string becomes : "<<reversewords2<<endl;
+    std::string s1="Uber Career Prep";
+    std::string reversewords1=reverseWords(s1);
+    std::cout<<"After Reversing the words string becomes : "<<reversewords1<<std::endl;
+    std::string s2="Emma lives in Brooklyn, New York.";
+    std::string reversewords2=reverseWords(s2);
+    std::cout<<"After Reversing the words string becomes : "<<reversewords2<<std::endl;
 }

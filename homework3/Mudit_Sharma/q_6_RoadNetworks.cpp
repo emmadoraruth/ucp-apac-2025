@@ -30,13 +30,12 @@
 //time complexity:O(n+m)
 //space complexity:O(n^2)
 #include<bits/stdc++.h>
-using namespace std;
-void bfs(string curr,unordered_map<string,vector<string>>& adj,unordered_map<string,bool>& visited){
-    queue<string> q;
+void bfs(std::string curr,std::unordered_map<std::string,std::vector<std::string>>& adj,std::unordered_map<std::string,bool>& visited){
+    std::queue<std::string> q;
     q.push(curr);
     visited[curr]=true;
     while(!q.empty()){
-        string front=q.front();
+        std::string front=q.front();
         q.pop();
         for(auto& neigh:adj[front]){
             if(!visited[neigh]){
@@ -46,11 +45,11 @@ void bfs(string curr,unordered_map<string,vector<string>>& adj,unordered_map<str
         }
     }
 }
-int findNetwork(pair<vector<string>,vector<pair<string,string>>>& network){
-    vector<string> cities=network.first;
-    vector<pair<string,string>> connection=network.second;
-    unordered_map<string,vector<string>> adj;
-    unordered_map<string,bool> visited;
+int findNetwork(std::pair<std::vector<std::string>,std::vector<std::pair<std::string,std::string>>>& network){
+    std::vector<std::string> cities=network.first;
+    std::vector<std::pair<std::string,std::string>> connection=network.second;
+    std::unordered_map<std::string,std::vector<std::string>> adj;
+    std::unordered_map<std::string,bool> visited;
     for(auto& i:cities){
         adj[i]={};
         visited[i]=false;
@@ -69,20 +68,20 @@ int findNetwork(pair<vector<string>,vector<pair<string,string>>>& network){
     return noOfNetworks;
 }
 int main(){
-    pair<vector<string>,vector<pair<string,string>>> roadnetwork1=
+    std::pair<std::vector<std::string>,std::vector<std::pair<std::string,std::string>>> roadnetwork1=
     {{"Skagway", "Juneau", "Gustavus", "Homer", "Port Alsworth", "Glacier Bay", "Fairbanks", "McCarthy", "Copper Center", "Healy", "Anchorage"},  
 {{"Anchorage", "Homer"}, {"Glacier Bay", "Gustavus"}, {"Copper Center", "McCarthy"}, {"Anchorage", "Copper Center"}, 
 {"Copper Center", "Fairbanks"}, {"Healy", "Fairbanks"}, {"Healy", "Anchorage"}}};
     int noOfNetworks1=findNetwork(roadnetwork1);
-    cout<<"Number of Networks are : "<<noOfNetworks1<<endl;
-    cout<<"----------------------------------------------------"<<endl;
+    std::cout<<"Number of Networks are : "<<noOfNetworks1<<std::endl;   //2
+    std::cout<<"----------------------------------------------------"<<std::endl;
 
-     pair<vector<string>,vector<pair<string,string>>> roadnetwork2=
+     std::pair<std::vector<std::string>,std::vector<std::pair<std::string,std::string>>> roadnetwork2=
     {{"Kona", "Hilo", "Volcano", "Lahaina", "Hana", "Haiku", "Kahului", "Princeville", "Lihue", "Waimea"},  
 {{"Kona", "Volcano"}, {"Volcano", "Hilo"}, {"Lahaina", "Hana"}, {"Kahului", "Haiku"}, {"Hana", "Haiku"}, {"Kahului", "Lahaina"}, 
 {"Princeville", "Lihue"}, {"Lihue", "Waimea"}}};
 int noOfNetworks2=findNetwork(roadnetwork2);
-    cout<<"Number of Networks are : "<<noOfNetworks2<<endl;
+    std::cout<<"Number of Networks are : "<<noOfNetworks2<<std::endl;   //3
    
 
     

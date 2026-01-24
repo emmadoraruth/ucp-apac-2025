@@ -18,11 +18,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<int> mergeKSortedArrays(vector<vector<int>> &arrays)
+std::vector<int> mergeKSortedArrays(std::vector<std::vector<int>> &arrays)
 {
-    vector<int> result;
+    std::vector<int> result;
 
-    priority_queue<tuple<int, int, int>,vector<tuple<int, int, int>>,greater<tuple<int, int, int>>>minHeap;
+    std::priority_queue<std::tuple<int, int, int>,std::vector<std::tuple<int, int, int>>,std::greater<std::tuple<int, int, int>>>minHeap;
     for (int i = 0; i < arrays.size(); i++)
     {
         if (!arrays[i].empty())
@@ -54,12 +54,21 @@ vector<int> mergeKSortedArrays(vector<vector<int>> &arrays)
 }
 int main()
 {
-    vector<vector<int>> arrays = {
+    std::vector<std::vector<int>> arrays1 = {
         {1, 2, 3, 4, 5},
         {1, 3, 5, 7, 9}};
 
-    vector<int> res = mergeKSortedArrays(arrays);
+    std::vector<int> res1 = mergeKSortedArrays(arrays1);
+    for (int x : res1)
+        std::cout << x << " ";
+    
+    std::cout<<std::endl;
 
-    for (int x : res)
-        cout << x << " ";
+    std::vector<std::vector<int>> arrays2 = {
+       {1, 4, 7, 9}, {2, 6, 7, 10, 11, 13, 15}, {3, 8, 12, 13, 16}};
+
+    std::vector<int> res2 = mergeKSortedArrays(arrays2);
+    for (int x : res2)
+        std::cout << x << " ";  
+    std::cout<<std::endl;
 }

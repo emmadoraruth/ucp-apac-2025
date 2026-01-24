@@ -17,43 +17,42 @@
 //space complexity :O(n) in queue
 
 #include <bits/stdc++.h>
-using namespace std;
 
 // color: 1 = blue, 2 = red
 int shortestAlternatingPath(
-    vector<pair<pair<char,char>, string>>& edges,
+    std::vector<std::pair<std::pair<char,char>, std::string>>& edges,
     char origin,
     char destination
 ) {
     // build adjacency list
-    unordered_map<char, vector<pair<char,int>>> adj;
+    std::unordered_map<char, std::vector<std::pair<char,int>>> adj;
 
     for (size_t i = 0; i < edges.size(); i++) {
         char u = edges[i].first.first;
         char v = edges[i].first.second;
-        string color = edges[i].second;
+        std::string color = edges[i].second;
 
         int c = (color == "blue") ? 1 : 2;
-        adj[u].push_back(make_pair(v, c));
+        adj[u].push_back(std::make_pair(v, c));
     }
 
     // visited[node][color]
-    unordered_map<char, vector<bool>> visited;
+    std::unordered_map<char, std::vector<bool>> visited;
     for (auto it = adj.begin(); it != adj.end(); ++it) {
-        visited[it->first] = vector<bool>(3, false);
+        visited[it->first] = std::vector<bool>(3, false);
     }
 
     // queue stores: (node, lastColor, distance)
-    queue< tuple<char,int,int> > q;
-    q.push(make_tuple(origin, 0, 0));
+    std::queue<std::tuple<char,int,int>> q;
+    q.push(std::make_tuple(origin, 0, 0));
 
     while (!q.empty()) {
-        tuple<char,int,int> curr = q.front();
+        std::tuple<char,int,int> curr = q.front();
         q.pop();
 
-        char node = get<0>(curr);
-        int lastColor = get<1>(curr);
-        int dist = get<2>(curr);
+        char node = std::get<0>(curr);
+        int lastColor = std::get<1>(curr);
+        int dist = std::get<2>(curr);
 
         if (node == destination) {
             return dist;
@@ -65,7 +64,7 @@ int shortestAlternatingPath(
 
             if (edgeColor != lastColor && !visited[next][edgeColor]) {
                 visited[next][edgeColor] = true;
-                q.push(make_tuple(next, edgeColor, dist + 1));
+                q.push(std::make_tuple(next, edgeColor, dist + 1));
             }
         }
     }
@@ -74,7 +73,7 @@ int shortestAlternatingPath(
 }
 
 int main() {
-    vector<pair<pair<char,char>, string>> edges = {
+    std::vector<std::pair<std::pair<char,char>, std::string>> edges = {
         {{'A','B'}, "blue"},
         {{'A','C'}, "red"},
         {{'B','D'}, "blue"},
@@ -86,8 +85,8 @@ int main() {
         {{'E','C'}, "red"}
     };
 
-    cout << shortestAlternatingPath(edges, 'A', 'E') << endl; // 4
-    cout << shortestAlternatingPath(edges, 'E', 'D') << endl; // -1
+    std::cout << shortestAlternatingPath(edges, 'A', 'E') << std::endl; // 4
+    std::cout << shortestAlternatingPath(edges, 'E', 'D') << std::endl; // -1
 
     return 0;
 }
