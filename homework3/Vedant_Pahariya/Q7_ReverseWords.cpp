@@ -1,5 +1,8 @@
 // Given a string, return the string with the order of the space-separated words reversed.
 
+// Time Complexity: O(N), where N is the length of the input string
+// Space Complexity; O(N), for the stack
+
 #include <bits/stdc++.h>
 using namespace std;
 
